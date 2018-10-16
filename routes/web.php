@@ -14,3 +14,7 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->get('/boards/{boardId}','BoardController@show');
+$app->get('/boards','BoardController@index');
+$app->post('/boards','BoardController@store');
