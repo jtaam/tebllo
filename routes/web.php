@@ -15,6 +15,10 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
+$app->get('/login','AuthController@login');
+$app->get('/logout','AuthController@logout');
+$app->post('/register','AuthController@register');
+
 $app->get('/boards/{boardId}','BoardController@show');
 $app->get('/boards','BoardController@index');
 $app->post('/boards','BoardController@store');
